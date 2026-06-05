@@ -73,17 +73,9 @@
   .site-footer{margin-top:32px; padding:20px 4px 0; border-top:1px solid var(--line); color:var(--sub); font-size:.74rem; line-height:1.7}
   .ad-slot{margin:24px 0; min-height:90px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:12px; padding:0; overflow:hidden; position:relative}
   .ad-slot .ad-label{position:absolute; top:4px; left:8px; font-size:.6rem; letter-spacing:.08em; color:rgba(255,255,255,.85); text-transform:uppercase; z-index:2; background:rgba(0,0,0,.25); padding:1px 6px; border-radius:4px}
-  /* ダミー派手バナー(本番広告の見え方を擬似体験) */
   .ad-dummy{width:100%; min-height:110px; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; font-weight:800; font-size:1.1rem; letter-spacing:.02em; line-height:1.4; padding:18px; cursor:pointer}
-  .ad-dummy.a{background:linear-gradient(115deg,#ff512f,#dd2476)}
   .ad-dummy.b{background:linear-gradient(115deg,#11998e,#38ef7d)}
-  .ad-dummy.c{background:linear-gradient(115deg,#2027,#4a90d9 60%,#f59e0b)}
   .ad-dummy small{display:block; font-size:.7rem; font-weight:500; opacity:.9; margin-top:4px}
-  /* 下部固定 */
-  .ad-sticky{position:fixed; left:0; right:0; bottom:0; z-index:9; box-shadow:0 -2px 12px rgba(0,0,0,.12); margin:0}
-  .ad-sticky .ad-dummy{min-height:60px; font-size:.95rem}
-  .ad-sticky .ad-close{position:absolute; top:50%; right:10px; transform:translateY(-50%); background:rgba(0,0,0,.3); color:#fff; border:none; width:26px; height:26px; border-radius:50%; cursor:pointer; font-size:1rem; z-index:3}
-  body{padding-bottom:120px}
   .site-footer p{margin-bottom:8px}
   .site-footer .disc-title{font-weight:700; color:#4b5563; font-size:.78rem; margin-bottom:6px}
   .site-footer .disc-src{margin-top:12px; font-size:.7rem; opacity:.85}
@@ -107,10 +99,6 @@
 </div>
 
 <!-- 広告A: 検索条件と結果の間 -->
-<div class="ad-slot" id="ad-a">
-  <span class="ad-label">広告</span>
-  <div class="ad-dummy a">🔥 夏までに-5kg！パーソナルジム無料体験<small>※これはダミー広告です（配置確認用）</small></div>
-</div>
 
 <div class="results" id="results"></div>
 
@@ -133,13 +121,6 @@
     </div>
     <div class="notice">ボタンを押すとGoogle AIモードの検索結果が新しいタブで開きます。表示される説明はAIによる自動生成のため、必ず内容をよく確認し、ご自身の判断で種目を選んでください。</div>
   </div>
-</div>
-
-<!-- 広告C: 画面下部固定 -->
-<div class="ad-slot ad-sticky" id="ad-c">
-  <span class="ad-label">広告</span>
-  <div class="ad-dummy c">💪 プロテイン20%OFF 今だけ<small>※ダミー広告（配置確認用）</small></div>
-  <button class="ad-close" id="ad-c-close" aria-label="閉じる">×</button>
 </div>
 
 <script src="data.js"></script>
@@ -227,6 +208,7 @@ function render(list){
   const box=$('results');
   if(!list.length){box.innerHTML='<div class="empty">条件に合う種目が見つかりませんでした。<br>条件を変えてお試しください。</div>';return;}
   box.innerHTML='';
+  const AD_EVERY=10, AD_MAX=3; let adCount=0;
   list.slice(0,60).forEach((e,i)=>{
     const card=document.createElement('div');
     card.className='card';
@@ -234,8 +216,9 @@ function render(list){
     card.innerHTML=`<div><div class="name">${e.ja}</div><div class="en">${e.en}</div><div class="tags"><span class="tag">${BODY_PRO[e.body]||e.body}</span>${secTags(e)}<span class="tag">${EQUIP_JA[e.equip]||e.equip}</span><span class="tag">${LEVEL_JA[e.level]||e.level}</span></div></div><div class="rightcol">${badge}${stars(e.rating)}</div>`;
     card.onclick=()=>openModal(e);
     box.appendChild(card);
-    // 広告B: 結果リストの途中(10件目の後)に差し込む
-    if(i===9 && list.length>11){
+    // 広告B: N件ごとに1枠、上限AD_MAX。最後の数件には差し込まない
+    if((i+1)%AD_EVERY===0 && adCount<AD_MAX && i<list.slice(0,60).length-2){
+      adCount++;
       const ad=document.createElement('div');
       ad.className='ad-slot';
       ad.innerHTML='<span class="ad-label">広告</span><div class="ad-dummy b">🏋️ 初回限定！ジム入会金0円キャンペーン<small>※ダミー広告（配置確認用）</small></div>';
@@ -267,8 +250,6 @@ $('overlay').onclick=ev=>{if(ev.target===$('overlay'))closeModal(false);};
 
 $('mode-beginner').onclick=()=>{mode="beginner";sel=defaultSel();$('mode-beginner').classList.add('on');$('mode-trainee').classList.remove('on');renderControls();search();};
 $('mode-trainee').onclick=()=>{mode="trainee";sel=defaultSel();$('mode-trainee').classList.add('on');$('mode-beginner').classList.remove('on');renderControls();search();};
-
-$('ad-c-close').onclick=()=>{$('ad-c').style.display='none'; document.body.style.paddingBottom='60px';};
 
 renderControls();
 search();
