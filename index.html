@@ -231,7 +231,7 @@ function render(list){
     card.className='card';
     const badge=e.super?'<span class="super-badge">超定番</span>':(e.staple?'<span class="staple-badge">定番</span>':'');
     card.innerHTML=`<div><div class="name">${e.ja}</div><div class="en">${e.en}</div><div class="tags"><span class="tag">${BODY_PRO[e.body]||e.body}</span>${secTags(e)}<span class="tag">${EQUIP_JA[e.equip]||e.equip}</span><span class="tag">${LEVEL_JA[e.level]||e.level}</span></div></div><div class="rightcol">${badge}${stars(e.rating)}</div>`;
-    card.onclick=()=>openModal(e);
+    card.onclick=()=>openExercise(e);
     box.appendChild(card);
     // 広告B: N件ごとに1枠、上限AD_MAX。最後の数件には差し込まない
     if((i+1)%AD_EVERY===0 && adCount<AD_MAX && i<list.slice(0,60).length-2){
@@ -244,6 +244,16 @@ function render(list){
   });
 }
 function aiUrl(q){return 'https://www.google.com/search?q='+encodeURIComponent(q)+'&udm=50';}
+// 英語名→スラッグ(generate_pages.py と同じロジック)。静的ページのファイル名に対応
+function slugify(en){return en.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+// カードタップ時の出し分け: 超定番・定番は自前の静的ページへ、それ以外(Tier3)は従来のGoogle検索モーダルへ
+function openExercise(e){
+  if(e.super||e.staple){
+    location.href='exercises/'+slugify(e.en)+'.html';
+  }else{
+    openModal(e);
+  }
+}
 function openModal(e){
   $('m-title').textContent=e.ja;
   $('m-en').textContent=e.en;
