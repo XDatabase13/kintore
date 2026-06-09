@@ -89,6 +89,16 @@
   .site-footer p{margin-bottom:8px}
   .site-footer .disc-title{font-weight:700; color:#4b5563; font-size:.78rem; margin-bottom:6px}
   .site-footer .disc-src{margin-top:12px; font-size:.7rem; opacity:.85}
+  /* 全種目一覧（SEO用の内部リンク。クローラーが個別ページを辿れるようにする） */
+  .exercise-directory{margin-top:36px; padding-top:20px; border-top:1px solid var(--line)}
+  .exercise-directory>.dir-intro{font-size:.9rem; color:var(--sub); margin-bottom:16px; line-height:1.7}
+  .exercise-directory h2.dir-title{font-size:1.02rem; color:#374151; margin-bottom:4px}
+  .dir-group{margin-bottom:18px}
+  .dir-group .dir-h{font-size:.86rem; font-weight:700; color:#4b5563; margin:14px 0 7px; padding-left:8px; border-left:3px solid var(--accent,#2f6fd0)}
+  .dir-list{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:6px 10px}
+  .dir-list li{margin:0}
+  .dir-list a{display:inline-block; font-size:.8rem; color:#2f6fd0; text-decoration:none; padding:3px 9px; background:#f3f6fb; border-radius:6px; line-height:1.5}
+  .dir-list a:hover{background:#e3ecf9; text-decoration:underline}
 </style>
 </head>
 <body>
@@ -115,6 +125,276 @@
 </div>
 
 <div class="results" id="results"></div>
+
+
+<!-- 全種目一覧: 静的ページへの内部リンク（検索エンジンが個別ページを発見・巡回できるようにするため） -->
+<nav class="exercise-directory" aria-label="全種目一覧">
+  <h2 class="dir-title">部位別 全種目一覧</h2>
+  <p class="dir-intro">鍛えたい部位から、各種目の詳しいやり方ページを開けます。</p>
+      <div class="dir-group">
+        <h3 class="dir-h">胸</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/incline-cable-chest-press.html">インクライン・ケーブル・チェストプレス</a></li>
+          <li><a href="exercises/incline-dumbbell-flyes.html">インクライン・ダンベル・フライ</a></li>
+          <li><a href="exercises/incline-push-up.html">インクライン・プッシュアップ</a></li>
+          <li><a href="exercises/incline-dumbbell-bench-press.html">インクラインダンベルベンチプレス</a></li>
+          <li><a href="exercises/close-grip-dumbbell-bench-press.html">クローズグリップ・ダンベル・ベンチプレス</a></li>
+          <li><a href="exercises/clock-push-up.html">クロック・プッシュアップ</a></li>
+          <li><a href="exercises/cable-chest-press.html">ケーブル・チェストプレス</a></li>
+          <li><a href="exercises/kettlebell-plyo-push-up.html">ケトルベル・プライオ・プッシュアップ</a></li>
+          <li><a href="exercises/standing-cable-chest-press.html">スタンディング・ケーブル・チェストプレス</a></li>
+          <li><a href="exercises/sphinx-push-up.html">スフィンクス・プッシュアップ</a></li>
+          <li><a href="exercises/smith-machine-incline-bench-press.html">スミスマシン・インクライン・ベンチプレス</a></li>
+          <li><a href="exercises/smith-machine-close-grip-bench-press.html">スミスマシン・クローズグリップ・ベンチプレス</a></li>
+          <li><a href="exercises/smith-machine-bench-press.html">スミスマシン・ベンチプレス</a></li>
+          <li><a href="exercises/dumbbell-bench-press.html">ダンベル・ベンチプレス</a></li>
+          <li><a href="exercises/dumbbell-flyes.html">ダンベルフライ</a></li>
+          <li><a href="exercises/decline-barbell-bench-press.html">デクライン・バーベル・ベンチプレス</a></li>
+          <li><a href="exercises/decline-push-up.html">デクライン・プッシュアップ</a></li>
+          <li><a href="exercises/decline-dumbbell-flyes.html">デクラインダンベルフライ</a></li>
+          <li><a href="exercises/decline-dumbbell-bench-press.html">デクラインダンベルベンチプレス</a></li>
+          <li><a href="exercises/close-grip-bench-press.html">ナローグリップ・ベンチプレス</a></li>
+          <li><a href="exercises/close-grip-ez-bar-bench-press.html">ナローグリップEZバー・ベンチプレス</a></li>
+          <li><a href="exercises/neutral-grip-dumbbell-bench-press.html">ニュートラルグリップ・ダンベルベンチプレス</a></li>
+          <li><a href="exercises/barbell-incline-bench-press-medium-grip.html">バーベル・インクライン・ベンチプレス（ミディアムグリップ）</a></li>
+          <li><a href="exercises/pushups.html">プッシュアップ</a></li>
+          <li><a href="exercises/front-raise-and-pullover.html">フロントレイズとプルオーバー</a></li>
+          <li><a href="exercises/bench-press.html">ベンチプレス</a></li>
+          <li><a href="exercises/machine-chest-press.html">マシン・チェストプレス</a></li>
+          <li><a href="exercises/reverse-grip-incline-dumbbell-bench-press.html">リバースグリップ・インクラインダンベルベンチプレス</a></li>
+          <li><a href="exercises/leverage-incline-chest-press.html">レバレッジ・インクライン・チェストプレス</a></li>
+          <li><a href="exercises/leverage-chest-press.html">レバレッジ・チェストプレス</a></li>
+          <li><a href="exercises/leverage-decline-chest-press.html">レバレッジ・デクライン・チェストプレス</a></li>
+          <li><a href="exercises/push-up-wide.html">ワイド・プッシュアップ</a></li>
+          <li><a href="exercises/wide-grip-decline-barbell-bench-press.html">ワイドグリップ・デクライン・バーベル・ベンチプレス</a></li>
+          <li><a href="exercises/wide-grip-hands-elevated-push-up.html">ワイドグリップ・ハンドエレベイト・プッシュアップ</a></li>
+          <li><a href="exercises/wide-grip-bench-press.html">ワイドグリップ・ベンチプレス</a></li>
+          <li><a href="exercises/hands-elevated-push-up.html">手を高くした腕立て伏せ</a></li>
+          <li><a href="exercises/feet-elevated-push-up.html">足を上げた腕立て伏せ</a></li>
+          <li><a href="exercises/single-arm-push-up.html">片腕腕立て伏せ</a></li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3 class="dir-h">肩</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/incline-anti-gravity-shoulder-press.html">インクライン・アンチグラビティ・ショルダープレス</a></li>
+          <li><a href="exercises/incline-face-down-bar-front-raise.html">インクライン・フェイスダウン・バー・フロントレイズ</a></li>
+          <li><a href="exercises/incline-dumbbell-front-raise.html">インクラインダンベルフロントレイズ</a></li>
+          <li><a href="exercises/overhead-dumbbell-front-raise.html">オーバーヘッドダンベルフロントレイズ</a></li>
+          <li><a href="exercises/cable-shoulder-press.html">ケーブルショルダープレス</a></li>
+          <li><a href="exercises/side-lateral-raise.html">サイドレイズ</a></li>
+          <li><a href="exercises/seated-cable-shoulder-press.html">シーテッド・ケーブル・ショルダープレス</a></li>
+          <li><a href="exercises/seated-side-lateral-raise.html">シーテッド・サイドレイズ</a></li>
+          <li><a href="exercises/seated-dumbbell-shoulder-press.html">シーテッド・ダンベル・ショルダープレス</a></li>
+          <li><a href="exercises/seated-barbell-shoulder-press.html">シーテッド・バーベル・ショルダープレス</a></li>
+          <li><a href="exercises/standing-dumbbell-shoulder-press.html">スタンディングダンベルショルダープレス</a></li>
+          <li><a href="exercises/snatch-grip-behind-the-neck-overhead-press.html">スナッチグリップ・ビハインド・ザ・ネック・オーバーヘッドプレス</a></li>
+          <li><a href="exercises/smith-machine-shoulder-press.html">スミスマシン・ショルダープレス</a></li>
+          <li><a href="exercises/dumbbell-front-raise.html">ダンベル・フロントレイズ</a></li>
+          <li><a href="exercises/dumbbell-lying-rear-lateral-raise.html">ダンベル・ライイング・リア・ラテラル・レイズ</a></li>
+          <li><a href="exercises/barbell-upright-row.html">バーベル・アップライト・ロウ</a></li>
+          <li><a href="exercises/barbell-shoulder-press.html">バーベル・ショルダープレス</a></li>
+          <li><a href="exercises/barbell-rear-delt-bent-over-row.html">バーベル・リアデルト・ベントオーバー・ロウ</a></li>
+          <li><a href="exercises/machine-shoulder-press.html">マシン・ショルダープレス</a></li>
+          <li><a href="exercises/handstand-push-up.html">逆立ち腕立て伏せ</a></li>
+          <li><a href="exercises/alternating-cable-shoulder-press.html">交互ケーブルショルダープレス</a></li>
+          <li><a href="exercises/alternating-standing-shoulder-press.html">交互スタンディング・ショルダープレス</a></li>
+          <li><a href="exercises/alternating-dumbbell-front-raise.html">交互ダンベルフロントレイズ</a></li>
+          <li><a href="exercises/single-arm-incline-lateral-raise.html">片手インクライン・ラテラルレイズ</a></li>
+          <li><a href="exercises/single-arm-cable-front-raise.html">片手ケーブル・フロントレイズ</a></li>
+          <li><a href="exercises/single-arm-standing-shoulder-press.html">片手スタンディングショルダープレス</a></li>
+          <li><a href="exercises/single-dumbbell-front-raise.html">片手ダンベル・フロントレイズ</a></li>
+          <li><a href="exercises/single-arm-palm-in-dumbbell-shoulder-press.html">片手パームイン・ダンベル・ショルダープレス</a></li>
+          <li><a href="exercises/single-arm-lateral-raise.html">片手ラテラルレイズ</a></li>
+          <li><a href="exercises/standing-palms-in-shoulder-press.html">立ち姿勢での手のひらを内側に向けたショルダープレス</a></li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3 class="dir-h">上腕三頭筋</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/weighted-bench-dip.html">ウェイト付きベンチディップ</a></li>
+          <li><a href="exercises/cable-overhead-triceps-extension.html">ケーブルオーバーヘッド・トライセプス・エクステンショ</a></li>
+          <li><a href="exercises/standing-barbell-overhead-triceps-extension.html">スタンディング・バーベル・オーバーヘッド・トライセプス・エクステンション</a></li>
+          <li><a href="exercises/standing-dumbbell-triceps-extension.html">スタンディングダンベル・トライセプス・エクステンション</a></li>
+          <li><a href="exercises/decline-dumbbell-triceps-extension.html">デクラインダンベル・トライセプス・エクステンション</a></li>
+          <li><a href="exercises/triceps-dip.html">トライセプス・ディップ</a></li>
+          <li><a href="exercises/kneeling-cable-triceps-extension.html">ニーリング・ケーブル・トライセプス・エクステンション</a></li>
+          <li><a href="exercises/bench-dip.html">ベンチディップ</a></li>
+          <li><a href="exercises/machine-triceps-extension.html">マシン・トライセプス・エクステンション</a></li>
+          <li><a href="exercises/lying-cable-triceps-extension.html">ライイング・ケーブル・トライセプス・エクステンション</a></li>
+          <li><a href="exercises/reverse-grip-bench-press.html">リバースグリップ・ベンチプレス</a></li>
+          <li><a href="exercises/low-cable-overhead-triceps-extension.html">ローケーブル・オーバーヘッド・トライセプス・エクステンション</a></li>
+          <li><a href="exercises/low-cable-triceps-extension.html">ローケーブル・トライセプス・エクステンション</a></li>
+          <li><a href="exercises/single-arm-low-cable-triceps-extension.html">ン片手ローケーブル・トライセプス・エクステンション</a></li>
+          <li><a href="exercises/feet-elevated-bench-dip.html">足上げベンチディップ</a></li>
+          <li><a href="exercises/single-arm-cable-triceps-extension.html">片手ケーブル・トライセプス・エクステンション</a></li>
+          <li><a href="exercises/single-arm-dumbbell-triceps-extension.html">片手ダンベル・トライセプス・エクステンション</a></li>
+          <li><a href="exercises/push-ups-close-triceps-position.html">腕立て伏せ - 上腕三頭筋を強調する狭い姿勢</a></li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3 class="dir-h">上腕二頭筋</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/seated-dumbbell-biceps-curl.html">シーテッド・ダンベル・バイセップス・カール</a></li>
+          <li><a href="exercises/dumbbell-alternate-bicep-curl.html">ダンベル・オルタネート・バイセップ・カール</a></li>
+          <li><a href="exercises/dumbbell-bicep-curl.html">ダンベル・バイセップ・カール</a></li>
+          <li><a href="exercises/flexor-incline-dumbbell-curls.html">フレクサー・インクライン・ダンベルカール</a></li>
+          <li><a href="exercises/preacher-hammer-dumbbell-curl.html">プレチャー・ハンマー・ダンベルカール</a></li>
+          <li><a href="exercises/machine-bicep-curl.html">マシン・バイセップカール</a></li>
+          <li><a href="exercises/lying-cable-biceps-curl.html">ライイング・ケーブル・バイセップス・カール</a></li>
+          <li><a href="exercises/lying-supine-dumbbell-curl.html">仰向けダンベルカール</a></li>
+          <li><a href="exercises/alternating-incline-dumbbell-biceps-curl.html">交互インクラインダンベル・バイセップスカール</a></li>
+          <li><a href="exercises/alternate-incline-dumbbell-curl.html">交互インクラインダンベルカール</a></li>
+          <li><a href="exercises/palms-out-incline-biceps-curl.html">手のひらを外側に向けたインクライン・バイセップス・カール</a></li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3 class="dir-h">広背筋</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/weighted-pull-up.html">ウェイト付き懸垂</a></li>
+          <li><a href="exercises/close-grip-front-lat-pulldown.html">クローズグリップ・フロント・ラットプルダウン</a></li>
+          <li><a href="exercises/neutral-grip-pull-up.html">ニュートラルグリップ・プルアップ</a></li>
+          <li><a href="exercises/pull-up.html">プルアップ</a></li>
+          <li><a href="exercises/full-range-of-motion-lat-pulldown.html">フルレンジ・オブ・モーション・ラットプルダウン</a></li>
+          <li><a href="exercises/machine-assisted-pull-up.html">マシンアシスト・プルアップ</a></li>
+          <li><a href="exercises/lat-pull-down.html">ラットプルダウン</a></li>
+          <li><a href="exercises/reverse-grip-lat-pull-down.html">リバースグリップ・ラットプルダウン</a></li>
+          <li><a href="exercises/rocky-pull-ups-pulldowns.html">ロッキー・プルアップ／プルダウン</a></li>
+          <li><a href="exercises/wide-grip-rear-pull-up.html">ワイドグリップ・リアプルアップ</a></li>
+          <li><a href="exercises/pullups.html">懸垂</a></li>
+          <li><a href="exercises/single-arm-kneeling-lat-pull-down.html">片手膝立ちラットプルダウン</a></li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3 class="dir-h">背中(中部)</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/smith-machine-bent-over-row.html">スミスマシン・ベントオーバー・ロウ</a></li>
+          <li><a href="exercises/dumbbell-bent-over-row.html">ダンベル・ベントオーバー・ロウ</a></li>
+          <li><a href="exercises/barbell-bent-over-row.html">バーベルベントオーバーロウ</a></li>
+          <li><a href="exercises/reverse-grip-bent-over-row.html">リバースグリップ・ベントオーバー・ロウ</a></li>
+          <li><a href="exercises/upside-down-pull-up.html">逆さ懸垂</a></li>
+          <li><a href="exercises/alternating-sit-through-with-crunch.html">交互のシットスルーとクランチ</a></li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3 class="dir-h">僧帽筋</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/cable-straight-bar-upright-row.html">ケーブルストレートバー・アップライトロウ</a></li>
+          <li><a href="exercises/kettlebell-sumo-deadlift-high-pull.html">ケトルベル・スモウデッドリフト・ハイプル</a></li>
+          <li><a href="exercises/standing-dumbbell-upright-row.html">スタンディングダンベルアップライトロウ</a></li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3 class="dir-h">腰</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/seated-back-extension.html">シーテッド・バックエクステンション</a></li>
+          <li><a href="exercises/back-extension.html">バックエクステンション</a></li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3 class="dir-h">腹筋</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/ab-crunch-machine.html">アブクランチマシン</a></li>
+          <li><a href="exercises/ab-wheel-roll-out.html">アブホイール・ロールアウト</a></li>
+          <li><a href="exercises/ab-roller.html">アブローラー</a></li>
+          <li><a href="exercises/weighted-crunches.html">ウェイト付きクランチ</a></li>
+          <li><a href="exercises/exercise-ball-crunch.html">エクササイズボールを使ったクランチ</a></li>
+          <li><a href="exercises/elbow-plank.html">エルボープランク</a></li>
+          <li><a href="exercises/crunches.html">クランチ</a></li>
+          <li><a href="exercises/crunch-hands-overhead.html">クランチ - 両手を頭上に</a></li>
+          <li><a href="exercises/cross-body-crunch.html">クロスボディ・クランチ</a></li>
+          <li><a href="exercises/cable-reverse-crunch.html">ケーブル・リバースクランチ</a></li>
+          <li><a href="exercises/cable-russian-twists.html">ケーブル・ロシアン・ツイスト</a></li>
+          <li><a href="exercises/gorilla-chin-crunch.html">ゴリラ・チンアップ／クランチ</a></li>
+          <li><a href="exercises/standing-cable-crunch.html">スタンディング・ケーブル・クランチ</a></li>
+          <li><a href="exercises/dumbbell-suitcase-crunch.html">ダンベル・スーツケース・クランチ</a></li>
+          <li><a href="exercises/decline-oblique-crunch.html">デクライン・オブリク・クランチ</a></li>
+          <li><a href="exercises/decline-crunch.html">デクライン・クランチ</a></li>
+          <li><a href="exercises/decline-reverse-crunch.html">デクライン・リバース・クランチ</a></li>
+          <li><a href="exercises/kneeling-cable-oblique-crunch.html">ニーリング・ケーブル・オブリク・クランチ</a></li>
+          <li><a href="exercises/kneeling-cable-crunch.html">ニーリング・ケーブル・クランチ</a></li>
+          <li><a href="exercises/hanging-leg-raise.html">ハンギング・レッグ・レイズ</a></li>
+          <li><a href="exercises/flat-bench-lying-leg-raise.html">フラットベンチ・レッグレイズ</a></li>
+          <li><a href="exercises/reverse-crunch.html">リバースクランチ</a></li>
+          <li><a href="exercises/rope-crunch.html">ロープ・クランチ</a></li>
+          <li><a href="exercises/russian-twist.html">ロシアンツイスト</a></li>
+          <li><a href="exercises/feet-elevated-oblique-crunch.html">足を上げた斜腹筋クランチ</a></li>
+          <li><a href="exercises/knees-tucked-crunch.html">膝を胸に引き寄せるクランチ</a></li>
+          <li><a href="exercises/bent-knee-reverse-crunch.html">膝を曲げたリバースクランチ</a></li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3 class="dir-h">大腿四頭筋</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/weighted-jump-squat.html">ウェイトジャンプスクワット</a></li>
+          <li><a href="exercises/weighted-sissy-squat.html">ウェイト付きシッシースクワット</a></li>
+          <li><a href="exercises/kettlebell-pistol-squat.html">ケトルベル・ピストルスクワット</a></li>
+          <li><a href="exercises/front-squats-with-two-kettlebells.html">ケトルベル2個を使ったフロントスクワット</a></li>
+          <li><a href="exercises/goblet-squat.html">ゴブレットスクワット</a></li>
+          <li><a href="exercises/zercher-squat.html">ザーチャースクワット</a></li>
+          <li><a href="exercises/jefferson-squats.html">ジェファーソン・スクワット</a></li>
+          <li><a href="exercises/smith-machine-back-squat.html">スミスマシン・バックスクワット</a></li>
+          <li><a href="exercises/smith-machine-box-squat.html">スミスマシン・ボックススクワット</a></li>
+          <li><a href="exercises/smith-machine-leg-press.html">スミスマシン・レッグプレス</a></li>
+          <li><a href="exercises/dumbbell-goblet-squat.html">ダンベル・ゴブレットスクワット</a></li>
+          <li><a href="exercises/dumbbell-sumo-squat.html">ダンベル・スモースクワット</a></li>
+          <li><a href="exercises/dumbbell-reverse-lunge.html">ダンベル・リバースランジ</a></li>
+          <li><a href="exercises/dumbbell-squat.html">ダンベルスクワット</a></li>
+          <li><a href="exercises/split-squat-with-dumbbells.html">ダンベルスプリットスクワット</a></li>
+          <li><a href="exercises/dumbbell-lunges.html">ダンベルランジ</a></li>
+          <li><a href="exercises/narrow-stance-squat.html">ナロー・スタンス・スクワット</a></li>
+          <li><a href="exercises/narrow-stance-hack-squats.html">ナロー・スタンス・ハックスクワット</a></li>
+          <li><a href="exercises/narrow-stance-leg-press.html">ナローレッグプレス</a></li>
+          <li><a href="exercises/barbell-walking-lunge.html">バーベル・ウォーキング・ランジ</a></li>
+          <li><a href="exercises/barbell-back-squat.html">バーベル・バックスクワット</a></li>
+          <li><a href="exercises/barbell-forward-lunge.html">バーベル・フォワードランジ</a></li>
+          <li><a href="exercises/barbell-bulgarian-split-squat.html">バーベル・ブルガリアンスプリットスクワット</a></li>
+          <li><a href="exercises/barbell-front-squat.html">バーベル・フロントスクワット</a></li>
+          <li><a href="exercises/barbell-squat.html">バーベルスクワット</a></li>
+          <li><a href="exercises/barbell-hack-squat.html">バーベルハックスクワット</a></li>
+          <li><a href="exercises/barbell-full-squat.html">バーベルフルスクワット</a></li>
+          <li><a href="exercises/hack-squat.html">ハックスクワット</a></li>
+          <li><a href="exercises/forward-lunge.html">フォワードランジ</a></li>
+          <li><a href="exercises/hex-bar-deadlift.html">ヘックスバーデッドリフト</a></li>
+          <li><a href="exercises/machine-squat.html">マシン・スクワット</a></li>
+          <li><a href="exercises/lying-machine-squat.html">リクライニングスクワットマシン</a></li>
+          <li><a href="exercises/leg-press.html">レッグプレス</a></li>
+          <li><a href="exercises/bodyweight-walking-lunge.html">自重ウォーキングランジ</a></li>
+          <li><a href="exercises/bodyweight-squat.html">自重スクワット</a></li>
+          <li><a href="exercises/bodyweight-reverse-lunge.html">自重リバースランジ</a></li>
+          <li><a href="exercises/single-leg-press.html">片足プレス</a></li>
+          <li><a href="exercises/single-leg-depth-squat.html">片足深蹲</a></li>
+          <li><a href="exercises/arms-crossed-jump-squat.html">腕を組んだジャンプスクワット</a></li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3 class="dir-h">ハムストリングス</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/exercise-ball-leg-curl.html">エクササイズボール・レッグカール</a></li>
+          <li><a href="exercises/kettlebell-pass-through-lunge.html">ケトルベル・パススルー・ランジ</a></li>
+          <li><a href="exercises/romanian-deadlift-with-kettlebell.html">ケトルベルを使ったルーマニアンデッドリフト</a></li>
+          <li><a href="exercises/kettlebell-one-legged-deadlift.html">ケトルベル片足デッドリフト</a></li>
+          <li><a href="exercises/stiff-legged-dumbbell-deadlift.html">スティッフレッグ・ダンベルデッドリフト</a></li>
+          <li><a href="exercises/romanian-deadlift-with-dumbbells.html">ダンベルを使ったルーマニアンデッドリフト</a></li>
+          <li><a href="exercises/barbell-stiff-legged-deadlift.html">バーベル・スティッフレッグ・デッドリフト</a></li>
+          <li><a href="exercises/barbell-deadlift.html">バーベルデッドリフト</a></li>
+          <li><a href="exercises/lying-leg-curls.html">ライイング・レッグカール</a></li>
+          <li><a href="exercises/romanian-deadlift.html">ルーマニアンデッドリフト</a></li>
+          <li><a href="exercises/leg-curl.html">レッグカール</a></li>
+          <li><a href="exercises/single-leg-kettlebell-deadlift.html">片足ケトルベルデッドリフト</a></li>
+        </ul>
+      </div>
+      <div class="dir-group">
+        <h3 class="dir-h">ふくらはぎ</h3>
+        <ul class="dir-list">
+          <li><a href="exercises/seated-calf-raise.html">シーテッド・カーフレイズ</a></li>
+          <li><a href="exercises/standing-calf-raises.html">スタンディング・カーフレイズ</a></li>
+          <li><a href="exercises/standing-barbell-calf-raise.html">スタンディング・バーベル・カーフレイズ</a></li>
+          <li><a href="exercises/smith-machine-calf-raise.html">スミスマシン・カーフレイズ</a></li>
+          <li><a href="exercises/rocking-standing-calf-raise.html">ロッキング・スタンディング・カーフレイズ</a></li>
+        </ul>
+      </div>
+</nav>
 
 <footer class="site-footer">
   <p class="disc-title">ご利用にあたって</p>
